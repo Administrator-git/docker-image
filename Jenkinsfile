@@ -18,9 +18,7 @@ pipeline {
         }
         stage('push image') {
             steps {
-                docker.withRegistry('https://hub.docker.com/', 'dockerhub-creds') {
-                   sh 'docker tag appservice-1.0-SNAPSHOT.war sadhu321/appservice-1.0-SNAPSHOT.war:v1'
-                }
+                docker.withRegistry('https://hub.docker.com/', 'dockerhub-creds')
             }
         }
     }
