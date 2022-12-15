@@ -13,7 +13,7 @@ pipeline {
         }
         stage('create docker image') {
             steps {
-                sh 'docker build -t sadhu321/myapp .'
+                sh 'docker build -t sadhu321/myapp:v1 .'
             }
         }
     }
