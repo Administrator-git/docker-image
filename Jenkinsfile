@@ -20,7 +20,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'sadhu321', variable: 'paramesh')]) {
                     sh "docker login -u sadhu321 -p ${paramesh}"
-                    sh "docker tag mypp:latest sadhu321/myapp:v1"
+                    sh "docker tag myapp:latest sadhu321/myapp:v1"
                     sh "docker push sadhu321/myapp:v1"
                 }
             }
