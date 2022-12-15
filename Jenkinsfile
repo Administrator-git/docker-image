@@ -1,9 +1,9 @@
 pipeline {
-    agent { label 'docker-slave1' }
+    agent any
     stages {
-        stage('test') {
+        stage('checkout scm') {
             steps {
-                sh 'java -version'
+                git branch: 'main', credentialsId: '03bb0430-268b-45af-9872-1fcff9ad8d7f', url: 'https://github.com/Administrator-git/docker-image.git'
             }
         }
     }
