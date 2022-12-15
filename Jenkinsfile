@@ -16,5 +16,12 @@ pipeline {
                 sh 'docker build -t sadhu321/myapp:v1 .'
             }
         }
+        stage('push image') {
+            steps {
+                docker.withRegistry('https://registry.address', 'docker-registry') {
+                   sh "docker push sadhu321/myapp:v1"
+                }
+            }
+        }   
     }
 }
