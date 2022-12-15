@@ -18,7 +18,9 @@ pipeline {
         }
         stage('push image') {
             steps {
-                docker.withRegistry('https://hub.docker.com/', 'dockerhub-creds')
+                script {
+                  docker.withRegistry('https://hub.docker.com/', 'dockerhub-creds')
+                }
             }
         }
     }
