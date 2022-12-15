@@ -18,7 +18,7 @@ pipeline {
         }
         stage('push image') {
             steps {
-                withCredentials([string(credentialsId: 'sadhu321', variable: 'paramesh')]) { # biding the password to variable as a secret text and passing the secret while login
+                withCredentials([string(credentialsId: 'sadhu321', variable: 'paramesh')]) {
                     sh "docker login -u sadhu321 -p ${paramesh}"
                     sh "docker tag mypp:latest sadhu321/myapp:v1"
                     sh "docker push sadhu321/myapp:v1"
