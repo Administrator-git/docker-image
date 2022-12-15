@@ -18,9 +18,7 @@ pipeline {
         }
         stage('push image') {
             steps {
-                docker.withRegistry('https://hub.docker.com/', 'dockerhub-creds') {
                    sh "docker push sadhu321/myapp:v1"
-                }
             }
         }   
     }
