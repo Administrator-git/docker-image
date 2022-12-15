@@ -18,7 +18,9 @@ pipeline {
         }
         stage('push image') {
             steps {
-                sh "docker push sadhu321/myapp:v1"
+                withCredentials([string(credentialsId: 'sadhu321', variable: 'dockerhubcreds')]) {
+                  sh "docker push sadhu321/myapp:v1"
+                }
             }
         }   
     }
