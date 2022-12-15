@@ -16,12 +16,5 @@ pipeline {
                 sh 'docker build -t myapp .'
             }
         }
-        stage('push image') {
-            steps {
-                script {
-                  docker.withRegistry('https://hub.docker.com/', 'dockerhub-creds')
-                }
-            }
-        }
     }
 }
