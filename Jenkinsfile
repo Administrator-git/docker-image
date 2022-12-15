@@ -13,9 +13,7 @@ pipeline {
         }
         stage('create docker image') {
             steps {
-                script {
-                  sh 'docker build -t myapp .'
-                }
+                sh 'docker build -t myapp .'
             }
         }
     }
